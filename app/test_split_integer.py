@@ -39,29 +39,3 @@ def test_split_integer_with_correct_result_and_properties(
         assert max(actual) - min(actual) <= 1, (
             f"Разница max/min больше 1: {max(actual)} - {min(actual)}"
         )
-
-
-def test_difference_between_max_min_is_at_most_one_general_case() -> None:
-    """
-    Дополнительная проверка, что разница max/min не превышает 1.
-    Использует случай с остатком.
-    """
-    value = 17
-    parts = 4
-    actual = split_integer(value, parts)
-
-    # Проверяем, что разница между максимальным и минимальным элементом <= 1
-    assert max(actual) - min(actual) <= 1
-
-
-def test_sum_of_the_parts_is_equal_to_value_general_case() -> None:
-    """
-    Дополнительная проверка, что сумма всех частей равна value.
-    Использует случай с остатком.
-    """
-    value = 32
-    parts = 6
-    actual = split_integer(value, parts)
-
-    # Проверяем, что сумма всех частей равна исходному value
-    assert sum(actual) == value
